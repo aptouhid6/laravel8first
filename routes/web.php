@@ -16,3 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('pnt', function () {
+     return view('peoplentechView');
+});
+Route::get('pnt/about', function () {
+    return view('about');
+});
