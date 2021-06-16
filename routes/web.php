@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\PntController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,9 +16,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('pnt', function () {
-     return view('peoplentechView');
-});
-Route::get('pnt/about', function () {
-    return view('about');
-});
+// Route::get('pnt', function () {
+//      return view('peoplentechView');
+// });
+Route::get('/pnt',[PntController::class, 'index']);
+
+// Route::get('pnt/about', function () {
+//     return view('about');
+// });
+Route::get('/pnt/about',[PntController::class, 'about']);
