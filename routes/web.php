@@ -25,3 +25,6 @@ Route::get('/pnt',[PntController::class, 'index']);
 //     return view('about');
 // });
 Route::get('/pnt/about',[PntController::class, 'about']);
+
+Route::get('/pnt/about/form',[PntController::class, 'form'])->name('about.form');
+Route::get('/preview',[PntController::class, 'preview'])->name('preview');
