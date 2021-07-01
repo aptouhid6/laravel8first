@@ -8,7 +8,11 @@
 </head>
 <body>
     <h1>About Form</h1>
-    <form action="<?php echo url('/preview') ?>">
+    
+    {{-- <form action="<?php echo url('/preview') ?>" method="post"> --}}
+    <form action="{{ route('preview') }}" method="post">
+       {{-- <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>"> --}}
+       @csrf
        <input type="text" name="name" placeholder="Entre Your Name">
        <br><br>
        <input type="text" name="email" placeholder="Entre Your Email">
