@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PntController extends Controller
 {
@@ -19,10 +20,21 @@ class PntController extends Controller
         return view('form');
     }
     public function preview(Request $request){
-        // dd($request->all());
-        $name = $request->name;
-        $email = $request->email;
-        $phone = $request->phone;
-        return view('preview', compact('name','email','phone'));
+        //dd($request->all());
+        // $name = $request->name;
+        // $email = $request->email;
+        // $phone = $request->phone;
+        $data = [];
+        $data['Name'] = $request->full_name;
+        $data['Email'] = $request->email_address;
+        $data['Phone'] = $request->phone_number;
+        // DB::table('abouts')->insert($data);
+        // dd($data);
+        $result = DB::table('abouts')->get();
+        //dd($result);
+        // $name = $result->Name;
+        // $email = $result->Email;
+        // $phone = $result->Phone;
+        return view('preview', compact('result'));
     }
 }

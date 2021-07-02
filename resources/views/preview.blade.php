@@ -7,10 +7,13 @@
     <title>User Preview</title>
 </head>
 <body>
-    <p>Name: {{ $name }} </p>
-    <p>Email: {{ $email }} </p>
-    <p>Phone: {{ $phone }} </p>
-    {{-- <a href="<?php echo url('pnt/about/form')?>">Back</a> --}}
+    @foreach($result as $r)
+       <p>Id: {{ $r->Id }}</p>
+       <p>Name: {{ $r->Name }} </p>
+       <p>Email: {{ $r->Email }} </p>
+       <p>Phone: {{ $r->Phone }} </p>
+    @endforeach
+    {{-- <a href="<?php //echo url('pnt/about/form')?>">Back</a> --}}
     <a href="{{ route('about.form') }}">Back</a>
 </body>
 </html>
