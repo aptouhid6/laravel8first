@@ -28,3 +28,4 @@ Route::get('/pnt/about',[PntController::class, 'about']);
 
 Route::get('/pnt/about/form',[PntController::class, 'form'])->name('about.form');
 Route::post('/preview',[PntController::class, 'preview'])->name('preview');
+Route::get('/show',[PntController::class, 'show'])->name('show');

@@ -30,11 +30,16 @@ class PntController extends Controller
         $data['Phone'] = $request->phone_number;
         // DB::table('abouts')->insert($data);
         // dd($data);
-        $result = DB::table('abouts')->get();
+        DB::table('abouts')->insert($data);
+        //$result = DB::table('abouts')->get();
         //dd($result);
         // $name = $result->Name;
         // $email = $result->Email;
         // $phone = $result->Phone;
+        return redirect()->route('show');
+    }
+    public function show(){
+        $result = DB::table('abouts')->get();
         return view('preview', compact('result'));
     }
 }
