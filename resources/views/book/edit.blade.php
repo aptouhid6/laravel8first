@@ -14,7 +14,7 @@
         @method('put')
         <input type="text" name="name" value="{{ $book->name }}" placeholder="Enter book name">
         <br><br>
-        <input type="text" name="author_name" value={{ $book->author_name }} placeholder="Entre author name">
+        <input type="text" name="author_name" value="{{ $book->author_name }}" placeholder="Entre author name">
         <br><br>
         <input type="date" value={{ $book->publish_date }} name="publish_date">
         <br><br>
