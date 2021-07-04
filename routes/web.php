@@ -1,6 +1,7 @@
 <?php
 use App\Http\Controllers\PntController;
 use App\Http\Controllers\AuthorController;
+use App\Http\Controllers\BookController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,3 +38,10 @@ Route::post('author/store',[AuthorController::class, 'store'])->name('author.sto
 Route::get('author/edit/{id}',[AuthorController::class, 'edit'])->name('author.edit');
 Route::put('author/update/{id}',[AuthorController::class, 'update'])->name('author.update');
 Route::delete('author/delete/{id}',[AuthorController::class, 'destroy'])->name('author.destroy');
+
+Route::get('books',[BookController::class, 'index'])->name('book.index');
+Route::get('book/create',[BookController::class, 'create'])->name('book.create');
+Route::post('book/store',[BookController::class, 'store'])->name('book.store');
+Route::get('book/edit/{id}',[BookController::class, 'edit'])->name('book.edit');
+Route::put('book/edit/{id}',[BookController::class, 'update'])->name('book.update');
+Route::delete('book/{id}',[BookController::class, 'delete'])->name('book.delete');
