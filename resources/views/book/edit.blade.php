@@ -16,7 +16,7 @@
         <br><br>
         <input type="text" name="author_name" value="{{ $book->author_name }}" placeholder="Entre author name">
         <br><br>
-        <input type="date" value={{ $book->publish_date }} name="publish_date">
+        <input type="date" value="{{ $book->publish_date }}" name="publish_date">
         <br><br>
         <button type="submit">Submit</button>
     </form>
