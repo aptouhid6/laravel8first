@@ -2,7 +2,9 @@
 use App\Http\Controllers\PntController;
 use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\BookshopController;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -45,3 +47,12 @@ Route::post('book/store',[BookController::class, 'store'])->name('book.store');
 Route::get('book/edit/{id}',[BookController::class, 'edit'])->name('book.edit');
 Route::put('book/edit/{id}',[BookController::class, 'update'])->name('book.update');
 Route::delete('book/{id}',[BookController::class, 'delete'])->name('book.delete');
+
+
+// Bookoshops
+Route::get('bookshops',[BookshopController::class, 'index'])->name('bookshop.index');
+Route::get('bookshop/create',[BookshopController::class, 'create'])->name('bookshop.create');
+Route::post('bookshop/store',[BookshopController::class, 'store'])->name('bookshop.store');
+Route::get('bookshop/edit/{id}',[BookshopController::class, 'edit'])->name('bookshop.edit');
+Route::put('bookshop/edit/{id}',[BookshopController::class, 'update'])->name('bookshop.update');
+Route::delete('bookshop/{id}',[BookshopController::class, 'delete'])->name('bookshop.delete');
